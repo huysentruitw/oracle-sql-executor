@@ -1,2 +1,3 @@
-# oracle-sql-executor
-Executes SQL scripts in a folder against an Oracle database
+# Oracle SQL Executor
+
+Executes SQL scripts in a folder against an Oracle database.
