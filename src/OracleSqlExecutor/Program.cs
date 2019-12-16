@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Common;
 using System.IO;
+using System.Linq;
 using Oracle.ManagedDataAccess.Client;
 
 namespace OracleSqlExecutor
@@ -50,7 +51,7 @@ namespace OracleSqlExecutor
             using (DbConnection connection = new OracleConnection(connectionString))
             {
                 connection.Open();
-                foreach (var scriptFilePath in scriptFilePaths)
+                foreach (var scriptFilePath in scriptFilePaths.OrderBy(x => x))
                 {
                     Console.WriteLine($"Executing script '{Path.GetFileName(scriptFilePath)}'");
                     var sqlScript = File.ReadAllText(scriptFilePath);
